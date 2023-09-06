@@ -1,36 +1,35 @@
-import React from 'react'
-import { Container, Button } from '@mui/material';
-import { MdOutlineDarkMode, MdLightMode } from 'react-icons/md';
+import React from "react";
+import { Container, Button } from "@mui/material";
+import { MdOutlineDarkMode, MdLightMode } from "react-icons/md";
+import { Outlet } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import "./Styles.css";
 
 interface Props {
-    darkmode: boolean;
-    setDarkmode: React.Dispatch<React.SetStateAction<boolean>>;
+  darkmode: boolean;
+  setDarkmode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const App = ({darkmode, setDarkmode} : Props) => {
+const App = ({ darkmode, setDarkmode }: Props) => {
+  const handleDarkmode = ({ darkmode, setDarkmode }: Props) => {
+    setDarkmode(!darkmode);
+  };
 
-    const handleDarkmode = (props: Props) => {
-        darkmode ? setDarkmode(false) : setDarkmode(true);
-        // if (darkmode === 'true') {
-        //     console.log('darkmode is true');
-        //     setDarkmode('false');
-        // } else {
-        //     console.log('darkmode is false');
-        //     setDarkmode('true');
-        // }
-    }
-    
   return (
-    
-      <Container maxWidth='xl' >
-      <Button fullWidth variant="contained" onClick={
-        () => handleDarkmode({darkmode, setDarkmode}) //handleDarkmode må ha med props for å kunne endre på darkmode
-        }>
-        {darkmode ? <MdOutlineDarkMode/> : <MdLightMode/>}
+    <div className="app">
+      <Navbar />
+      <Button
+        className="darkbutton"
+        variant="contained"
+        onClick={
+          () => handleDarkmode({ darkmode, setDarkmode }) //handleDarkmode må ha med props for å kunne endre på darkmode
+        }
+      >
+        {darkmode ? <MdOutlineDarkMode /> : <MdLightMode />}
       </Button>
+      <Outlet />
+    </div>
+  );
+};
 
-    </Container>
-  )
-}
-
-export default App
+export default App;

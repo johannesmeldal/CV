@@ -1,0 +1,14 @@
+.darkbutton {
+  position: fixed;
+  float: right;
+  top: 20px;
+  right: 20px;
+}
+
+.about {
+  float: right;
+  max-width: fit-content;
+  top: 10px;
+  left: 350px;
+  position: absolute;
+}
