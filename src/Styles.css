@@ -1,14 +1,49 @@
 .darkbutton {
-  position: fixed;
+  position: absolute;
   float: right;
-  top: 20px;
-  right: 20px;
+  top: 0vh;
+  z-index: 10;
+  /* display: flex; */
+}
+
+.navbar {
+  position: absolute;
+  display: flex;
+  left: 0vw;
 }
 
 .about {
+  position: relative;
+  display: block;
+  height: 100vh;
+  width: 80vw;
   float: right;
-  max-width: fit-content;
-  top: 10px;
-  left: 350px;
+  left: 20vw;
+  overflow: scroll;
+  border-style: dotted;
+}
+
+.imageMe {
   position: absolute;
+  /* text-align: center; */
+}
+
+.listItem {
+  font-size: 3vh;
+}
+
+.aboutHeader {
+  position: absolute;
+  display: block;
+  font-size: 5vh;
+  font-family: "Roboto", sans-serif;
+  color: rgb(144, 30, 30);
+  text-align: center;
+}
+
+.aboutText {
+  width: 60vw;
+  display: flex;
+  position: absolute;
+  /* margin: 10px, 10px, 0px, 10px; top, right, bottom, left */
 }

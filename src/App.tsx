@@ -4,6 +4,7 @@ import { MdOutlineDarkMode, MdLightMode } from "react-icons/md";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import "./Styles.css";
+import { Box } from "@mui/system";
 
 interface Props {
   darkmode: boolean;
@@ -16,8 +17,9 @@ const App = ({ darkmode, setDarkmode }: Props) => {
   };
 
   return (
-    <div className="app">
+    <Container className="app">
       <Navbar />
+      <Outlet />
       <Button
         className="darkbutton"
         variant="contained"
@@ -27,8 +29,7 @@ const App = ({ darkmode, setDarkmode }: Props) => {
       >
         {darkmode ? <MdOutlineDarkMode /> : <MdLightMode />}
       </Button>
-      <Outlet />
-    </div>
+    </Container>
   );
 };
 

@@ -5,8 +5,9 @@ import { CssBaseline, Divider, Drawer, List, Toolbar } from "@mui/material";
 import React from "react";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import "../Styles.css";
 
-const drawerWidth = 350;
+const drawerWidth = "20vw";
 
 interface Props {
   window?: () => Window;
@@ -21,10 +22,11 @@ function Navbar(props: Props) {
     setMobileOpen(!mobileOpen);
   };
 
+  //function that returns a drwar that takes in a size
+
   const drawer = (
     <div>
       <Toolbar />
-      {/* <Divider /> */}
       <List>
         {["About me", "Experience", "Projects"].map((text, index) => (
           <Navbar_Item header={text} newPath={paths[index]} />
@@ -42,7 +44,7 @@ function Navbar(props: Props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
   return (
-    <Box sx={{ position: "absolute" }}>
+    <Box className="navbar">
       <CssBaseline />
       <Box
         sx={{
@@ -52,6 +54,7 @@ function Navbar(props: Props) {
           backgroundColor: "secondary.main",
           borderRadius: "10px",
           top: "10px",
+          zIndex: 1,
         }}
         onClick={handleDrawerToggle}
       >

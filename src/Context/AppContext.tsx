@@ -11,7 +11,9 @@ const LOCAL_STORAGE_KEY = "drkmode";
 export enum ThemePalette { //definerer farger og fonter som kan brukes i temaet
   DARKBG = "#024262",
   DARKBUTTON = "#011a27",
+  DARKSECOND = "#1a313d",
   LIGHTBG = "#ffffff",
+  LIGHTSEC = "#cccccc",
   LIME = "#C8FA5F",
 
   //   FONT_GLOBAL = "'JetBrains Mono', monospace",
@@ -26,11 +28,14 @@ const darkTheme = createTheme({
     primary: {
       main: ThemePalette.DARKBUTTON,
     },
+    secondary: {
+      main: ThemePalette.DARKSECOND,
+    },
   },
-  typography: {
-    // fontFamily: ThemePalette.FONT_GLOBAL,
-    fontSize: 30,
-  },
+  // typography: {
+  //   // fontFamily: ThemePalette.FONT_GLOBAL,
+  //   fontSize: '20vh',
+  // },
   components: {
     MuiButton: {
       defaultProps: {
@@ -54,19 +59,19 @@ const lightTheme = createTheme({
       main: ThemePalette.LIME,
     },
     secondary: {
-        main: ThemePalette.DARKBUTTON,
+      main: ThemePalette.LIGHTSEC,
     },
   },
-  typography: {
-    // fontFamily: ThemePalette.FONT_GLOBAL,
-    fontSize: 30,
-  },
+  // typography: {
+  //   // fontFamily: ThemePalette.FONT_GLOBAL,
+  //   fontSize: 30,
+  // },
   components: {
     MuiButton: {
       defaultProps: {
         style: {
           textTransform: "none",
-          boxShadow: 'none',
+          boxShadow: "none",
           borderRadius: "0.5em",
         },
       },
@@ -76,7 +81,7 @@ const lightTheme = createTheme({
         style: {
           boxShadow: "10px",
           color: ThemePalette.LIME,
-        //   backgroundColor: ThemePalette.DARKBG,
+          //   backgroundColor: ThemePalette.DARKBG,
         },
       },
     },
